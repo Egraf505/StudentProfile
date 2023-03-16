@@ -12,7 +12,7 @@ namespace StudentProfile.Persistence.Context
 
         public StudentProfileContext()
         {
-
+            Database.EnsureCreated();
         }
 
         public StudentProfileContext(DbContextOptions<StudentProfileContext> options)
