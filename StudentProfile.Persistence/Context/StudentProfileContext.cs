@@ -5,10 +5,10 @@ namespace StudentProfile.Persistence.Context
 {
     public class StudentProfileContext : DbContext
     {
-        DbSet<Student> Students { get; set; }
-        DbSet<Teacher> Teachers { get; set; }
-        DbSet<Event> Events { get; set; }
-        DbSet<Skill> Skills { get; set; }
+        public DbSet<Student> Students { get; set; }
+        public DbSet<Teacher> Teachers { get; set; }
+        public DbSet<Event> Events { get; set; }
+        public DbSet<Skill> Skills { get; set; }
 
         public StudentProfileContext(DbContextOptions<StudentProfileContext> options)
             : base(options) { }        
