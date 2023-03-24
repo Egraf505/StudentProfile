@@ -7,7 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="MediatR" Version="12.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.15" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\StudentProfile.Domain\StudentProfile.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Events\Commnad\AddStudentsForEvent\" />
   </ItemGroup>
 
 </Project>

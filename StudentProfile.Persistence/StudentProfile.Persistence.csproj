@@ -15,10 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="EntityTypeConfigurations\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\StudentProfile.Application\StudentProfile.Application.csproj" />
   </ItemGroup>
 

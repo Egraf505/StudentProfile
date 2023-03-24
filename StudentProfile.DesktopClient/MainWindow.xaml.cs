@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,19 @@ namespace StudentProfile.DesktopClient
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFile = new OpenFileDialog();
+
+            bool? respounce = openFile.ShowDialog();
+
+            if (respounce == true) 
+            {
+                string filename = openFile.FileName;
+            }
+
         }
     }
 }

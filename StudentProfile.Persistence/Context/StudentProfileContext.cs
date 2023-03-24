@@ -1,25 +1,26 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using StudentProfile.Application.Interfaces;
 using StudentProfile.Domain;
+using StudentProfile.Persistence.EntityTypeConfigurations;
 
 namespace StudentProfile.Persistence.Context
 {
-    public class StudentProfileContext : DbContext
+    public class StudentProfileContext : DbContext, IStudentProfileContext
     {
         public DbSet<Student> Students { get; set; }
         public DbSet<Teacher> Teachers { get; set; }
         public DbSet<Event> Events { get; set; }
         public DbSet<Skill> Skills { get; set; }
 
-        public StudentProfileContext()
-        {
-            Database.EnsureCreated();
-        }
-
         public StudentProfileContext(DbContextOptions<StudentProfileContext> options)
             : base(options) { }        
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            builder.ApplyConfiguration(new EventConfiguration());
+            builder.ApplyConfiguration(new SkillConfiguration());
+            builder.ApplyConfiguration(new StudentConfiguration());
+            builder.ApplyConfiguration(new TeacherConfiguration());
             base.OnModelCreating(builder);
         }
 
