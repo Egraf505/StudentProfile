@@ -17,7 +17,7 @@ namespace StudentProfile.Application.Events.Commnad.DeleteEvent
         public async Task<Unit> Handle(DeleteEventCommnad request, CancellationToken cancellationToken)
         {
             var entity =
-                await _dbContext.Events.FirstOrDefaultAsync(e => e.Id == request.Id);
+                await _dbContext.Events.FindAsync(new object[] {request.Id}, cancellationToken);
 
             if (entity == null || entity.CreatedTeacher.Id == request.TeacherId) 
             {
