@@ -12,6 +12,10 @@ namespace StudentProfile.Persistence.Context
         public DbSet<Event> Events { get; set; }
         public DbSet<Skill> Skills { get; set; }
 
+        public StudentProfileContext()
+        {
+
+        }
         public StudentProfileContext(DbContextOptions<StudentProfileContext> options)
             : base(options) { }        
 

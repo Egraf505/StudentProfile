@@ -7,7 +7,7 @@ namespace StudentProfile.Domain
         public string Title { get; set; } = null!;
         public string Description { get; set; } = null!;
         public Teacher CreatedTeacher { get; set; } = null!;
-        public IEnumerable<Student> Students { get; set; } = null!;
-        public IEnumerable<Skill> Skills { get; set; } = null!;
+        public List<Student> Students { get; set; } = null!;
+        public List<Skill> Skills { get; set; } = null!;
     }
 }

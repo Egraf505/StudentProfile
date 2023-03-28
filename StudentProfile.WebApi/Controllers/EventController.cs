@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using StudentProfile.Application.Events.Commnad.AddStudentsForEvent;
 using StudentProfile.Application.Events.Commnad.CreateEvent;
 using StudentProfile.Application.Events.Queries.GetEventList;
 using StudentProfile.Application.Events.Queries.GetEvents;
@@ -32,6 +33,6 @@ namespace StudentProfile.WebApi.Controllers
             var command = _mapper.Map<CreateEventCommand>(eventDto);
             var eventId = await Mediator.Send(command);
             return Ok(eventId);
-        }
+        }        
     }
 }

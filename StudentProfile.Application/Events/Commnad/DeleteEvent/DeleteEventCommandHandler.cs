@@ -21,7 +21,7 @@ namespace StudentProfile.Application.Events.Commnad.DeleteEvent
 
             if (entity == null || entity.CreatedTeacher.Id == request.TeacherId) 
             {
-                throw new NotFoundExeption(nameof(Event), request.Id);
+                throw new NotFoundException(nameof(Event), request.Id);
             }
 
             _dbContext.Events.Remove(entity);

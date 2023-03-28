@@ -22,7 +22,7 @@ namespace StudentProfile.Application.Events.Commnad.CreateEvent
             Teacher teacher = await _dbContext.Teachers.FirstOrDefaultAsync(t => t.Id == request.TeacherId)!;
 
             if (teacher == null)
-                throw new NotFoundExeption(nameof(Teacher), request.TeacherId);
+                throw new NotFoundException(nameof(Teacher), request.TeacherId);
 
             Event eventNew = new Event()
             {

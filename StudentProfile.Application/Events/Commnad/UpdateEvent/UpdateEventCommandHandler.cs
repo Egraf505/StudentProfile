@@ -28,7 +28,7 @@ namespace StudentProfile.Application.Events.Commnad.UpdateEvent
 
             if (entity == null || entity.CreatedTeacher.Id != request.TeacherId)
             {
-                throw new NotFoundExeption(nameof(Event), request.Id);
+                throw new NotFoundException(nameof(Event), request.Id);
             }
 
             entity.Title = request.Title;
