@@ -1,5 +1,6 @@
 using StudentProfile.Persistence;
 using StudentProfile.Persistence.Context;
+using System;
 
 namespace StudentProfile.WebApi
 {
@@ -17,9 +18,9 @@ namespace StudentProfile.WebApi
                     var context = serviceProvaider.GetRequiredService<StudentProfileContext>();
                     DbInitializer.Initializer(context);
                 }
-                catch (Exception exeption)
+                catch (Exception exception)
                 {
-                                        
+                    Console.WriteLine(exception.Message, "An error occurred while app initialization");           
                 }
             }
 

@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using StudentProfile.Application.Events.Commnad.AddStudentsForEvent;
 using StudentProfile.Application.Events.Commnad.CreateEvent;
+using StudentProfile.Application.Events.Queries.GetDetailsFromEvent;
 using StudentProfile.Application.Events.Queries.GetEventList;
 using StudentProfile.Application.Events.Queries.GetEvents;
 using StudentProfile.WebApi.Models;
@@ -21,6 +22,16 @@ namespace StudentProfile.WebApi.Controllers
         public async Task<ActionResult<EventListVm>> GetAll()
         {
             var query = new GetEventListQuery();                        
+
+            var vm = await Mediator.Send(query);
+
+            return Ok(vm);
+        }
+
+        [HttpGet("eventId")]
+        public async Task<ActionResult<EventDetailVm>> GetDetails(int eventId)
+        {
+            var query = new GetDetailsFromEventQuery() { EventId = eventId };
 
             var vm = await Mediator.Send(query);
 

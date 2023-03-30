@@ -2,6 +2,7 @@
 using StudentProfile.Application.Common.Mapping;
 using StudentProfile.Application.Interfaces;
 using StudentProfile.Persistence;
+using StudentProfile.WebApi.Middleware;
 using System.Reflection;
 
 namespace StudentProfile.WebApi
@@ -50,6 +51,7 @@ namespace StudentProfile.WebApi
                 app.UseSwaggerUI();
             }
 
+            app.UseCustomExceptionHandler();
             app.UseRouting();
             app.UseHttpsRedirection();
 
