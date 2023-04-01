@@ -9,15 +9,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastraction", "Infrastra
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{D1049A3E-C17F-464A-9A9F-3E043F19FA44}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentProfile.Domain", "StudentProfile.Domain\StudentProfile.Domain.csproj", "{644AA221-1291-4CF5-B4A8-82356FC49A16}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentProfile.Domain", "StudentProfile.Domain\StudentProfile.Domain.csproj", "{644AA221-1291-4CF5-B4A8-82356FC49A16}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentProfile.Application", "StudentProfile.Application\StudentProfile.Application.csproj", "{1C39EA21-36A3-4B2F-ABDF-843D659D91D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentProfile.Application", "StudentProfile.Application\StudentProfile.Application.csproj", "{1C39EA21-36A3-4B2F-ABDF-843D659D91D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentProfile.Persistence", "StudentProfile.Persistence\StudentProfile.Persistence.csproj", "{17A1CF38-7AF5-4984-980E-C87C7178ADE9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentProfile.Persistence", "StudentProfile.Persistence\StudentProfile.Persistence.csproj", "{17A1CF38-7AF5-4984-980E-C87C7178ADE9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentProfile.WebApi", "StudentProfile.WebApi\StudentProfile.WebApi.csproj", "{DA3B1E36-37DB-4722-95A4-8E7926DA005B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentProfile.DesktopClient", "StudentProfile.DesktopClient\StudentProfile.DesktopClient.csproj", "{A9C139A4-7375-47D2-8A37-203E9B6F12B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentProfile.WebApi", "StudentProfile.WebApi\StudentProfile.WebApi.csproj", "{DA3B1E36-37DB-4722-95A4-8E7926DA005B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +39,6 @@ Global
 		{DA3B1E36-37DB-4722-95A4-8E7926DA005B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA3B1E36-37DB-4722-95A4-8E7926DA005B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA3B1E36-37DB-4722-95A4-8E7926DA005B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A9C139A4-7375-47D2-8A37-203E9B6F12B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A9C139A4-7375-47D2-8A37-203E9B6F12B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A9C139A4-7375-47D2-8A37-203E9B6F12B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A9C139A4-7375-47D2-8A37-203E9B6F12B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -54,7 +48,6 @@ Global
 		{1C39EA21-36A3-4B2F-ABDF-843D659D91D0} = {DC8DAE27-873A-4F09-943D-B3A05D5DCE4F}
 		{17A1CF38-7AF5-4984-980E-C87C7178ADE9} = {2D4CF40A-C73B-4595-B2C4-321D3216ED09}
 		{DA3B1E36-37DB-4722-95A4-8E7926DA005B} = {D1049A3E-C17F-464A-9A9F-3E043F19FA44}
-		{A9C139A4-7375-47D2-8A37-203E9B6F12B4} = {D1049A3E-C17F-464A-9A9F-3E043F19FA44}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {421DB802-1484-4743-A1CF-057657B57348}
