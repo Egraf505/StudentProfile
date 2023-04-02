@@ -17,6 +17,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentProfile.Persistence"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentProfile.WebApi", "StudentProfile.WebApi\StudentProfile.WebApi.csproj", "{DA3B1E36-37DB-4722-95A4-8E7926DA005B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Identity", "Identity", "{341C0C37-BCC0-4867-A047-622BE074D726}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentProfile.Identity", "StudentProfile.Identity\StudentProfile.Identity.csproj", "{9EFB675F-A07B-4C84-93C2-A5EDE9E7C12B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,10 @@ Global
 		{DA3B1E36-37DB-4722-95A4-8E7926DA005B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA3B1E36-37DB-4722-95A4-8E7926DA005B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA3B1E36-37DB-4722-95A4-8E7926DA005B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EFB675F-A07B-4C84-93C2-A5EDE9E7C12B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EFB675F-A07B-4C84-93C2-A5EDE9E7C12B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EFB675F-A07B-4C84-93C2-A5EDE9E7C12B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EFB675F-A07B-4C84-93C2-A5EDE9E7C12B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,6 +56,7 @@ Global
 		{1C39EA21-36A3-4B2F-ABDF-843D659D91D0} = {DC8DAE27-873A-4F09-943D-B3A05D5DCE4F}
 		{17A1CF38-7AF5-4984-980E-C87C7178ADE9} = {2D4CF40A-C73B-4595-B2C4-321D3216ED09}
 		{DA3B1E36-37DB-4722-95A4-8E7926DA005B} = {D1049A3E-C17F-464A-9A9F-3E043F19FA44}
+		{9EFB675F-A07B-4C84-93C2-A5EDE9E7C12B} = {341C0C37-BCC0-4867-A047-622BE074D726}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {421DB802-1484-4743-A1CF-057657B57348}
