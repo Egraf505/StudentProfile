@@ -8,6 +8,7 @@ namespace StudentProfile.Application.Events.Queries.GetEventList
     {
         public int Id { get; set; }
         public string Title { get; set; } = null!;
+        public string Description { get; set; } = null!;
 
         public void Mapping(Profile profile)
         {
@@ -15,7 +16,9 @@ namespace StudentProfile.Application.Events.Queries.GetEventList
                 .ForMember(noteDto => noteDto.Id,
                 opt => opt.MapFrom(note => note.Id))
                 .ForMember(noteDto => noteDto.Title,
-                opt => opt.MapFrom(note => note.Title));
+                opt => opt.MapFrom(note => note.Title))
+                .ForMember(noteDto => noteDto.Description,
+                opt => opt.MapFrom(note => note.Description));
         }
     }
 }
