@@ -7,6 +7,7 @@ namespace StudentProfile.Application.Events.Queries.GetEventList
     public class EventLookupDto : IMapWith<Event>
     {
         public int Id { get; set; }
+        public int TeacherId { get; set; }
         public string Title { get; set; } = null!;
         public string Description { get; set; } = null!;
 
@@ -18,7 +19,9 @@ namespace StudentProfile.Application.Events.Queries.GetEventList
                 .ForMember(noteDto => noteDto.Title,
                 opt => opt.MapFrom(note => note.Title))
                 .ForMember(noteDto => noteDto.Description,
-                opt => opt.MapFrom(note => note.Description));
+                opt => opt.MapFrom(note => note.Description))
+                .ForMember(noteDto => noteDto.TeacherId,
+                opt => opt.MapFrom(note => note.CreatedTeacher.Id));
         }
     }
 }
