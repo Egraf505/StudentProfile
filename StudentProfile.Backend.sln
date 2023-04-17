@@ -19,7 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentProfile.WebApi", "St
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Identity", "Identity", "{341C0C37-BCC0-4867-A047-622BE074D726}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentProfile.Identity", "StudentProfile.Identity\StudentProfile.Identity.csproj", "{9EFB675F-A07B-4C84-93C2-A5EDE9E7C12B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentProfile.Identity", "StudentProfile.Identity\StudentProfile.Identity.csproj", "{9EFB675F-A07B-4C84-93C2-A5EDE9E7C12B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
