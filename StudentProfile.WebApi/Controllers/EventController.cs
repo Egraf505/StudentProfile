@@ -56,7 +56,7 @@ namespace StudentProfile.WebApi.Controllers
         /// <param name="teadcherId"></param>
         /// <returns></returns>
         [HttpGet]
-        public async Task<ActionResult<List<Event>>> GetEventByTeacher([FromBody] int teadcherId)
+        public async Task<ActionResult<List<Event>>> GetEventByTeacher(int teadcherId)
         {
             var query = new GetEventByTeacherIdCommand() { teacherId = teadcherId };
             var events = await Mediator.Send(query);
@@ -69,7 +69,7 @@ namespace StudentProfile.WebApi.Controllers
         /// <param name="studentId"></param>
         /// <returns></returns>
         [HttpGet]
-        public async Task<ActionResult<List<Event>>> GetEventByStudent([FromBody] int studentId)
+        public async Task<ActionResult<List<Event>>> GetEventByStudent(int studentId)
         {
             var query = new GetEventByStudentIdCommand() { studentId = studentId };
             var events = await Mediator.Send(query);
