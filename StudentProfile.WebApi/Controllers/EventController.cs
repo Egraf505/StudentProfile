@@ -3,8 +3,11 @@ using Microsoft.AspNetCore.Mvc;
 using StudentProfile.Application.Events.Commnad.AddStudentsForEvent;
 using StudentProfile.Application.Events.Commnad.CreateEvent;
 using StudentProfile.Application.Events.Queries.GetDetailsFromEvent;
+using StudentProfile.Application.Events.Queries.GetEventByStudentId;
+using StudentProfile.Application.Events.Queries.GetEventByTeacherId;
 using StudentProfile.Application.Events.Queries.GetEventList;
 using StudentProfile.Application.Events.Queries.GetEvents;
+using StudentProfile.Domain;
 using StudentProfile.WebApi.Models;
 
 namespace StudentProfile.WebApi.Controllers
@@ -44,6 +47,33 @@ namespace StudentProfile.WebApi.Controllers
             var command = _mapper.Map<CreateEventCommand>(eventDto);
             var eventId = await Mediator.Send(command);
             return Ok(eventId);
-        }        
+        }
+
+
+        /// <summary>
+        /// Получение мероприятий по id преподователя
+        /// </summary>
+        /// <param name="teadcherId"></param>
+        /// <returns></returns>
+        [HttpGet]
+        public async Task<ActionResult<List<Event>>> GetEventByTeacher([FromBody] int teadcherId)
+        {
+            var query = new GetEventByTeacherIdCommand() { teacherId = teadcherId };
+            var events = await Mediator.Send(query);
+            return Ok(events);
+        }
+
+        /// <summary>
+        /// Получение мероприятий по id студента
+        /// </summary>
+        /// <param name="studentId"></param>
+        /// <returns></returns>
+        [HttpGet]
+        public async Task<ActionResult<List<Event>>> GetEventByStudent([FromBody] int studentId)
+        {
+            var query = new GetEventByStudentIdCommand() { studentId = studentId };
+            var events = await Mediator.Send(query);
+            return Ok(events);
+        }
     }
 }
