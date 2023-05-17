@@ -13,7 +13,7 @@ namespace StudentProfile.Application.Events.Queries.GetStudentFromEvent
 
         public void Mapping(Profile profile)
         {
-            profile.CreateMap<Student, StudentsLookupDto>()
+            profile.CreateMap<StudentProfile.Domain.Student, StudentsLookupDto>()
                 .ForMember(studentDto => studentDto.Id,
                 opt => opt.MapFrom(student => student.Id))
                 .ForMember(studentDto => studentDto.Name,

@@ -19,7 +19,7 @@ namespace StudentProfile.Application.Events.Commnad.CreateEvent
         public async Task<int> Handle(CreateEventCommand request, CancellationToken cancellationToken)
         {
 
-            Teacher teacher = await _dbContext.Teachers.FirstOrDefaultAsync(t => t.Id == request.TeacherId)!;
+            StudentProfile.Domain.Teacher teacher = await _dbContext.Teachers.FirstOrDefaultAsync(t => t.Id == request.TeacherId)!;
 
             if (teacher == null)
                 throw new NotFoundException(nameof(Teacher), request.TeacherId);
@@ -28,8 +28,17 @@ namespace StudentProfile.Application.Events.Commnad.CreateEvent
             {
                 CreatedTeacher = teacher,
                 Title = request.Title,
-                Description = request.Description
+                Description = request.Description,
+                Begin = request.Begin,
+                End= request.End
             };
+
+            if (request.Skills != null)
+            {
+                var skills = _dbContext.Skills.Where(x => request.Skills.Contains(x)).ToList();
+
+                eventNew.Skills= skills;
+            }
 
             await _dbContext.Events.AddAsync(eventNew);
             await _dbContext.SaveChangesAsync(cancellationToken);

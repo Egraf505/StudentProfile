@@ -9,5 +9,7 @@ namespace StudentProfile.Domain
         public Teacher CreatedTeacher { get; set; } = null!;
         public List<Student> Students { get; set; } = null!;
         public List<Skill> Skills { get; set; } = null!;
+        public DateTime Begin { get; set; }
+        public DateTime End { get; set; }
     }
 }

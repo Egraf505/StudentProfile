@@ -5,8 +5,8 @@ namespace StudentProfile.Application.Interfaces
 {
     public interface IStudentProfileContext
     {
-        public DbSet<Student> Students { get; set; }
-        public DbSet<Teacher> Teachers { get; set; }
+        public DbSet<StudentProfile.Domain.Student> Students { get; set; }
+        public DbSet<StudentProfile.Domain.Teacher> Teachers { get; set; }
         public DbSet<Event> Events { get; set; }
         public DbSet<Skill> Skills { get; set; }
 
