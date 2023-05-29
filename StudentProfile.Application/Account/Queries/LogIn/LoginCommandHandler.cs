@@ -20,16 +20,16 @@ namespace StudentProfile.Application.Account.Queries.LogIn
         {
             var user = await _dbContext.Teachers.FirstOrDefaultAsync(teacher => teacher.Login == request.Login && teacher.Password == request.Password);       
 
-            if (user?.Id != 0 && user != null)
+            if (user != null)
             {
                 return new LoginInVm() { UserId = user.Id, IsTheacher = true };
             }            
 
             var student = await _dbContext.Students.FirstOrDefaultAsync(student => student.Login == request.Login && student.Password == request.Password);
 
-            if (user?.Id != 0 && user != null)
+            if (student != null)
             {
-                return new LoginInVm() { UserId = user.Id, IsTheacher = false };
+                return new LoginInVm() { UserId = student.Id, IsTheacher = false };
             }
 
             throw new NotFoundException("User", "");

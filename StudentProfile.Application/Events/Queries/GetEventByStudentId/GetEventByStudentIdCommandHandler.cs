@@ -17,7 +17,7 @@ namespace StudentProfile.Application.Events.Queries.GetEventByStudentId
 
         public async Task<List<Event>> Handle(GetEventByStudentIdCommand request, CancellationToken cancellationToken)
         {
-            var student = await _context.Students.FirstOrDefaultAsync(x => x.id == request.studentId, cancellationToken);
+            var student = await _context.Students.FirstOrDefaultAsync(x => x.Id == request.studentId, cancellationToken);
 
             if (student == null)
             {
