@@ -18,7 +18,7 @@ namespace StudentProfile.Application.Events.Commnad.AddStudentsForEvent
 
         public async Task Handle(AttendTheEventCommand request, CancellationToken cancellationToken)
         {
-            var @event = await _dbContext.Events.FirstOrDefaultAsync(@event => @event.Id == request.EventId);
+            var @event = await _dbContext.Events.Include(x => x.Skills).FirstOrDefaultAsync(@event => @event.Id == request.EventId);
 
             if (@event == null)
                 throw new NotFoundException(nameof(Event), request.EventId);
@@ -27,6 +27,11 @@ namespace StudentProfile.Application.Events.Commnad.AddStudentsForEvent
 
             if (student == null)
                 throw new NotFoundException(nameof(Student), request.StudentId);
+
+            if (@event.Skills != null)
+            {
+                student.Skills.AddRange(@event.Skills);
+            }
 
             student.Events.Add(@event);
             await _dbContext.SaveChangesAsync(cancellationToken);            
