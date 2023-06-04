@@ -18,11 +18,11 @@ namespace StudentProfile.Application.Account.Queries.LogIn
 
         public async Task<LoginInVm> Handle(LogInCommand request, CancellationToken cancellationToken)
         {
-            var user = await _dbContext.Teachers.FirstOrDefaultAsync(teacher => teacher.Login == request.Login && teacher.Password == request.Password);       
+            var teaher = await _dbContext.Teachers.FirstOrDefaultAsync(teacher => teacher.Login == request.Login && teacher.Password == request.Password);       
 
-            if (user != null)
+            if (teaher != null)
             {
-                return new LoginInVm() { UserId = user.Id, IsTheacher = true };
+                return new LoginInVm() { UserId = teaher.Id, IsTheacher = true };
             }            
 
             var student = await _dbContext.Students.FirstOrDefaultAsync(student => student.Login == request.Login && student.Password == request.Password);
