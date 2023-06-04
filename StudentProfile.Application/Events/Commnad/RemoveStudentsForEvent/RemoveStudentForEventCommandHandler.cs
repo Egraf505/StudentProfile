@@ -6,6 +6,7 @@ using StudentProfile.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -29,7 +30,7 @@ namespace StudentProfile.Application.Events.Commnad.RemoveStudentsForEvent
             if (@event == null)
                 throw new NotFoundException(nameof(Event), request.EventId);
 
-            var student = await _dbContext.Students.Include(events => events.Events).FirstOrDefaultAsync(student => student.Id == request.StudentId);
+            var student = await _dbContext.Students.Include(events => events.Events).Include(s => s.Skills).FirstOrDefaultAsync(student => student.Id == request.StudentId);
 
             if (student == null)
                 throw new NotFoundException(nameof(Student), request.StudentId);
