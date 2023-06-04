@@ -13,6 +13,8 @@ namespace StudentProfile.Application.Events.Queries.GetEventList
         public DateTime Begin { get; set; }
         public DateTime End { get; set; }
 
+        public List<Skill>? Skills { get; set; }
+
         public void Mapping(Profile profile)
         {
             profile.CreateMap<Event, EventLookupDto>()
@@ -27,7 +29,9 @@ namespace StudentProfile.Application.Events.Queries.GetEventList
                 .ForMember(noteDto => noteDto.Begin,
                 opt => opt.MapFrom(note => note.Begin))
                 .ForMember(noteDto => noteDto.End,
-                opt => opt.MapFrom(note => note.End));
+                opt => opt.MapFrom(note => note.End))
+                .ForMember(noteDto => noteDto.Skills,
+                opt => opt.MapFrom(note => note.Skills));
         }
     }
 }
