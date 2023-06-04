@@ -24,6 +24,7 @@ namespace StudentProfile.Application.Events.Queries.GetEventList
             var eventQuery =
                  await _dbContext.Events
                  .Include(t => t.CreatedTeacher)
+                 .Include(s => s.Skills)
                  .ProjectTo<EventLookupDto>(_mapper.ConfigurationProvider)
                  .ToListAsync(cancellationToken);
 
