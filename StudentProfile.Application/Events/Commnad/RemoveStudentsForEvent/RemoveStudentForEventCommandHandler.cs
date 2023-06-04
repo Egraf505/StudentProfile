@@ -24,7 +24,7 @@ namespace StudentProfile.Application.Events.Commnad.RemoveStudentsForEvent
 
         public async Task Handle(RemoveStudentForEventCommand request, CancellationToken cancellationToken)
         {
-            var @event = await _dbContext.Events.FirstOrDefaultAsync(@event => @event.Id == request.EventId);
+            var @event = await _dbContext.Events.Include(x => x.Skills).FirstOrDefaultAsync(@event => @event.Id == request.EventId);
 
             if (@event == null)
                 throw new NotFoundException(nameof(Event), request.EventId);
@@ -33,6 +33,14 @@ namespace StudentProfile.Application.Events.Commnad.RemoveStudentsForEvent
 
             if (student == null)
                 throw new NotFoundException(nameof(Student), request.StudentId);
+
+            if (@event.Skills != null)
+            {
+                foreach (var skill in @event.Skills)
+                {
+                    student.Skills.Remove(skill);
+                }
+            }
 
             student.Events.Remove(@event);
             await _dbContext.SaveChangesAsync(cancellationToken);
