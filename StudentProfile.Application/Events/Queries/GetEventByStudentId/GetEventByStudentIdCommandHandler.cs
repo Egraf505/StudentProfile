@@ -24,7 +24,9 @@ namespace StudentProfile.Application.Events.Queries.GetEventByStudentId
                 throw new NotFoundException(nameof(Student), request.studentId);
             }
 
-            var events = await _context.Events.Where(x => x.Students.Contains(student)).Include(t => t.CreatedTeacher.Id).ToListAsync(cancellationToken);
+            var events = await _context.Events
+                .Where(x => x.Students.Contains(student))
+                .ToListAsync(cancellationToken);
 
             return events;
         }
